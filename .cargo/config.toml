@@ -1,0 +1,7 @@
+[alias]
+# Test Commands
+test-all = "test --workspace -- --nocapture"
+test-unit = "test --workspace --lib -- --nocapture"
+test-sim = "test -- --nocapture"
+# Build Commands
+near-build = "build --target wasm32-unknown-unknown --release"
