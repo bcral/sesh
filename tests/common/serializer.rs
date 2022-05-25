@@ -1,22 +1,30 @@
 
 use borsh::{BorshSerialize, BorshDeserialize};
+use serde::{Deserialize, Serialize};
+use serde_json::json;
 use near_workspaces::AccountId;
 
-#[derive(BorshSerialize, BorshDeserialize, PartialEq, Debug)]
+#[derive(BorshSerialize, BorshDeserialize,Serialize, Deserialize, PartialEq, Debug)]
 pub struct DepositArgs {
-    account_id: AccountId
+    account_id: String
 }
 
 impl DepositArgs {
 
     pub fn new(account_id: AccountId) -> Self{
         Self {
-            account_id
+           account_id: account_id.to_string()
         }
     }
 
     pub fn try_to_vec(&self) -> Vec<u8> {
         self.account_id.try_to_vec().unwrap()
+    }
+
+    pub fn try_to_json(&self) -> serde_json::Value {
+        let str = serde_json::to_string(self).unwrap().replace('\'',"");
+        let json: serde_json::Value = serde_json::from_str(&str).unwrap();
+        json
     }
 }
 

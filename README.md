@@ -1,24 +1,24 @@
 
-### Global Config
+# Global Config
 
-# Cargo.toml
+### Cargo.toml
 `[workspaces]`
 <!--  see https://doc.rust-lang.org/cargo/reference/workspaces.html -->
 
 `[test]`
 <!-- see  https://doc.rust-lang.org/cargo/reference/cargo-targets.html -->
 
-# config.toml
+### config.toml
 <!-- see https://doc.rust-lang.org/cargo/reference/config.html -->
 `[alias]`
 
-### Layout
+# Layout
 
-# Contracts
+### Contracts
 
-# Simulation Tests
+### Simulation Tests
 
-# Scripts
+### Scripts
 
-### Near Workspaces
+# Near Workspaces
 <!-- see  https://github.com/near/workspaces-rs -->

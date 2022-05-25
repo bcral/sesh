@@ -12,7 +12,6 @@ use serde_json::json;
 // use workspaces::prelude::*;
 use near_workspaces::prelude::*;
 use near_workspaces::AccountId;
-use borsh::schema_helpers::try_to_vec_with_schema;
 
 
 const CONTRACT: &str = "./res/boilerplate_contract.wasm";
@@ -25,8 +24,6 @@ async fn test_boilerplate() -> anyhow::Result<()> {
     let wasm = std::fs::read(CONTRACT).expect("wasm file not found");
     let contract = worker.dev_deploy(&wasm).await?;
     
-    // worker context
-    let root_account = worker.root_account().id().clone();
     // *** CONTRACT INITIALIZATION EXAMPLE ***
     // initialize contract calling the `new()` function
     contract.call(&worker, "init")
@@ -42,16 +39,12 @@ async fn test_boilerplate() -> anyhow::Result<()> {
         .await?;
 
     // *** VIEW FUNCTION EXAMPLE ***
-    // check storage variable `owner`
+    // check storage variable `balance`
     let args_obj = DepositArgs::new(contract.id().clone());
-    let args = args_obj.try_to_vec();
-    println!("ARGS: {:?}", args);
+    let args = args_obj.try_to_json();
     let balance_res: u128 = contract
         .call(&worker, "get_balance")
-        .args_json(json!({
-            "account_id": contract.id().clone()
-        }))?
-        // .view(&worker, "get_balance", args)
+        .args_json(args)?
         .transact()
         .await?
         .json()?;
