@@ -1,6 +1,6 @@
 // integration test module imports
-mod common;
-use crate::common::{serializer::DepositArgs};
+pub mod common; // must import module before performing granular imports
+use common::{serializer::DepositArgs};
 
 // macro allowing us to convert human readable units to workspace units.
 use near_units::parse_near;
