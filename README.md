@@ -71,3 +71,7 @@ This section explains how to add contracts, simulation tests, and aliased cargo 
 
 - `[alias]`
     - Some default aliased commands already set up to speed up testing. Feel free to extend to your liking
+
+## TODO (Possible added functionality
+- add Typechain like bindings for contracts
+- add scripting languange for `/scripts` folder (TS/Python)
