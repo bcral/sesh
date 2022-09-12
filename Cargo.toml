@@ -1,5 +1,5 @@
 [package]
-name = "near-boilerplate"
+name = "near-api"
 version = "0.1.0"
 edition = "2021"
 
@@ -29,7 +29,7 @@ serde_with = "1"
 # workspaces allow multiple rust folders (contains `Cargo.toml`) to 
 # share a single `Cargo.lock` and output directory
 members = [
-    "contracts/boilerplate",
+    "contracts/main",
 ]
 
 # [[test]]

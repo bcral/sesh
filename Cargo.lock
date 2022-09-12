@@ -329,13 +329,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "boilerplate-contract"
-version = "0.1.0"
-dependencies = [
- "near-sdk",
-]
-
-[[package]]
 name = "borsh"
 version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -508,6 +501,13 @@ name = "constant_time_eq"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "245097e9a4535ee1e3e3931fcfcd55a796a44c643e8596ff6566d68f09b87bbc"
+
+[[package]]
+name = "contract"
+version = "0.1.0"
+dependencies = [
+ "near-sdk",
+]
 
 [[package]]
 name = "convert_case"
@@ -1366,7 +1366,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "near-boilerplate"
+name = "near-api"
 version = "0.1.0"
 dependencies = [
  "anyhow",

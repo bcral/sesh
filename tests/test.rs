@@ -14,10 +14,10 @@ use near_workspaces::prelude::*;
 use near_workspaces::AccountId;
 
 
-const CONTRACT: &str = "./res/boilerplate_contract.wasm";
+const CONTRACT: &str = "./res/contract.wasm";
 
 #[tokio::test]
-async fn test_boilerplate() -> anyhow::Result<()> {
+async fn test() -> anyhow::Result<()> {
     
     // deploy contract to chain with wasm file
     let worker = near_workspaces::sandbox().await?;
